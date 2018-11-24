@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		244CE5C61FA69C2C6968A05F /* Pods_TextureNodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C26772B4FE2A993FACE516 /* Pods_TextureNodes.framework */; };
 		D9F573ED21A8F4ED0065ADFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F573EC21A8F4ED0065ADFB /* AppDelegate.swift */; };
 		D9F573EF21A8F4ED0065ADFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F573EE21A8F4ED0065ADFB /* ViewController.swift */; };
 		D9F573F221A8F4ED0065ADFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F573F021A8F4ED0065ADFB /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		667362EE1BFBE485F3EA72CA /* Pods-TextureNodes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextureNodes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TextureNodes/Pods-TextureNodes.debug.xcconfig"; sourceTree = "<group>"; };
+		94C26772B4FE2A993FACE516 /* Pods_TextureNodes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextureNodes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D815E4A03E3841CCF53928A6 /* Pods-TextureNodes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextureNodes.release.xcconfig"; path = "Pods/Target Support Files/Pods-TextureNodes/Pods-TextureNodes.release.xcconfig"; sourceTree = "<group>"; };
 		D9F573E921A8F4ED0065ADFB /* TextureNodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextureNodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F573EC21A8F4ED0065ADFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F573EE21A8F4ED0065ADFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				244CE5C61FA69C2C6968A05F /* Pods_TextureNodes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FC959669F4AACC5B880BBF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94C26772B4FE2A993FACE516 /* Pods_TextureNodes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAF2C9A67B73F476B1972C02 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				667362EE1BFBE485F3EA72CA /* Pods-TextureNodes.debug.xcconfig */,
+				D815E4A03E3841CCF53928A6 /* Pods-TextureNodes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D9F573E021A8F4ED0065ADFB = {
 			isa = PBXGroup;
 			children = (
 				D9F573EB21A8F4ED0065ADFB /* TextureNodes */,
 				D9F573EA21A8F4ED0065ADFB /* Products */,
+				AAF2C9A67B73F476B1972C02 /* Pods */,
+				1FC959669F4AACC5B880BBF0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9F573FB21A8F4EE0065ADFB /* Build configuration list for PBXNativeTarget "TextureNodes" */;
 			buildPhases = (
+				0CD1B23067493D83EED83ED0 /* [CP] Check Pods Manifest.lock */,
 				D9F573E521A8F4ED0065ADFB /* Sources */,
 				D9F573E621A8F4ED0065ADFB /* Frameworks */,
 				D9F573E721A8F4ED0065ADFB /* Resources */,
+				EF160E48FE80CDE7CE302BED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CD1B23067493D83EED83ED0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TextureNodes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF160E48FE80CDE7CE302BED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TextureNodes/Pods-TextureNodes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TextureNodes/Pods-TextureNodes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D9F573E521A8F4ED0065ADFB /* Sources */ = {
@@ -280,6 +351,7 @@
 		};
 		D9F573FC21A8F4EE0065ADFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 667362EE1BFBE485F3EA72CA /* Pods-TextureNodes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +370,7 @@
 		};
 		D9F573FD21A8F4EE0065ADFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D815E4A03E3841CCF53928A6 /* Pods-TextureNodes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
