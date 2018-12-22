@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  TextureNodes
-//
-//  Created by Yuske Fukuyama on 2018/11/24.
-//  Copyright © 2018 Yuske Fukuyama. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -13,9 +5,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    let window = UIWindow(frame: UIScreen.main.bounds)
+    window.backgroundColor = UIColor.white
+    window.rootViewController = UINavigationController(rootViewController: LayoutAnimationBugViewController())
+    window.makeKeyAndVisible()
+    self.window = window
     return true
   }
 
