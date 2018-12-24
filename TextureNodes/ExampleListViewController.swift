@@ -10,7 +10,8 @@ final class ExampleListViewController: ASViewController<ASDisplayNode> {
   
   init() {
     examples = [
-      TruncatableProfile.self
+      TruncatableProfile.self,
+      Stories.self,
     ]
     
     super.init(node: ASTableNode())

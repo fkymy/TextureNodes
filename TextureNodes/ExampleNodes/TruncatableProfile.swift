@@ -117,6 +117,10 @@ final class TruncatableProfile: ExampleNode {
     )!
   }
   
+  @objc private func toggleIntroduction() {
+    expanded = !expanded
+  }
+  
   private func setupSeparatorNode() {
     separatorNode.style.height = ASDimensionMakeWithPoints(1.0)
     separatorNode.image = UIImage.as_resizableRoundedImage(
@@ -230,11 +234,4 @@ final class TruncatableProfile: ExampleNode {
     })
   }
   
-}
-
-extension TruncatableProfile {
-  
-  @objc private func toggleIntroduction() {
-    expanded = !expanded
-  }
 }
