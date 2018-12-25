@@ -10,7 +10,7 @@ final class Stories: ExampleNode, ASCollectionDelegate, ASCollectionDataSource {
   var stories: [Story] = []
   let kNumberOfStories: UInt = 12
   private let collectionNode: ASCollectionNode
-  private let layoutInspector = StoriesLayoutInspector()
+  // private let layoutInspector = StoriesLayoutInspector()
   
   override class var title: String {
     return "Stories"
@@ -45,7 +45,7 @@ final class Stories: ExampleNode, ASCollectionDelegate, ASCollectionDataSource {
     collectionNode.dataSource = self
     collectionNode.backgroundColor = .white
     collectionNode.style.height = ASDimensionMake(224)
-    collectionNode.layoutInspector = layoutInspector
+    // collectionNode.layoutInspector = layoutInspector
     collectionNode.registerSupplementaryNode(ofKind: UICollectionView.elementKindSectionHeader)
   }
   
@@ -68,62 +68,6 @@ final class Stories: ExampleNode, ASCollectionDelegate, ASCollectionDataSource {
 
   override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
     return ASWrapperLayoutSpec(layoutElement: collectionNode)
-  }
-  
-}
-
-final class StoriesLayout: UICollectionViewFlowLayout {
-  
-  let numRows: CGFloat = 1
-  let preferredRatio: CGFloat = 4 / 3
-  
-  override init() {
-    super.init()
-    self.setupLayout()
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  
-  private func setupLayout() {
-    self.minimumInteritemSpacing = 0
-    self.minimumLineSpacing = 0
-    self.scrollDirection = .horizontal
-  }
-  
-  private func itemHeight() -> CGFloat {
-    return collectionView!.frame.height / numRows
-  }
-  
-  override var itemSize: CGSize {
-    set {
-      self.itemSize = CGSize(width: (itemHeight() / preferredRatio), height: itemHeight())
-    }
-    get {
-      return CGSize(width: (itemHeight() / preferredRatio), height: itemHeight())
-    }
-  }
-  
-  override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
-    return self.collectionView!.contentOffset
-  }
-  
-}
-
-final class StoriesLayoutInspector: NSObject, ASCollectionViewLayoutInspecting {
-  
-  func collectionView(_ collectionView: ASCollectionView, constrainedSizeForNodeAt indexPath: IndexPath) -> ASSizeRange {
-    <#code#>
-  }
-  
-  func scrollableDirections() -> ASScrollDirection {
-    <#code#>
-  }
-  
-  func collectionView(_ collectionView: ASCollectionView, constrainedSizeForSupplementaryNodeOfKind kind: String, at indexPath: IndexPath) -> ASSizeRange {
-    let layout = collectionView.collectionViewLayout as! StoriesLayout
-    return ASSizeRange(min: CGSize.zero, max: layout.header)
   }
   
 }

@@ -7,5 +7,6 @@ target 'TextureNodes' do
 
   # Pods for TextureNodes
   pod 'Texture', '>= 2.0'
+  pod 'SnapKit', '~> 4.0.0'
 
 end
