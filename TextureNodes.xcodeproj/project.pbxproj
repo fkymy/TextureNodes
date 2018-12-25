@@ -15,7 +15,8 @@
 		D99D42C621CF539800923878 /* ExampleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D42C521CF539800923878 /* ExampleDetailViewController.swift */; };
 		D99D42C921D0B35900923878 /* TruncatableProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D42C821D0B35900923878 /* TruncatableProfile.swift */; };
 		D99D42CB21D0F2DE00923878 /* Stories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D42CA21D0F2DE00923878 /* Stories.swift */; };
-		D99D42D121D200AD00923878 /* StoriesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D42D021D200AD00923878 /* StoriesLayout.swift */; };
+		D99D42D121D200AD00923878 /* AnotherStoriesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D42D021D200AD00923878 /* AnotherStoriesLayout.swift */; };
+		D99D42D421D227F500923878 /* StoriesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D42D321D227F500923878 /* StoriesLayout.swift */; };
 		D9F573ED21A8F4ED0065ADFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F573EC21A8F4ED0065ADFB /* AppDelegate.swift */; };
 		D9F573F421A8F4EE0065ADFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F573F321A8F4EE0065ADFB /* Assets.xcassets */; };
 		D9F573F721A8F4EE0065ADFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F573F521A8F4EE0065ADFB /* LaunchScreen.storyboard */; };
@@ -32,7 +33,8 @@
 		D99D42C521CF539800923878 /* ExampleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleDetailViewController.swift; sourceTree = "<group>"; };
 		D99D42C821D0B35900923878 /* TruncatableProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruncatableProfile.swift; sourceTree = "<group>"; };
 		D99D42CA21D0F2DE00923878 /* Stories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stories.swift; sourceTree = "<group>"; };
-		D99D42D021D200AD00923878 /* StoriesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesLayout.swift; sourceTree = "<group>"; };
+		D99D42D021D200AD00923878 /* AnotherStoriesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherStoriesLayout.swift; sourceTree = "<group>"; };
+		D99D42D321D227F500923878 /* StoriesLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesLayout.swift; sourceTree = "<group>"; };
 		D9F573E921A8F4ED0065ADFB /* TextureNodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextureNodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F573EC21A8F4ED0065ADFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F573F321A8F4EE0065ADFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,7 +85,8 @@
 		D99D42D221D200D200923878 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
-				D99D42D021D200AD00923878 /* StoriesLayout.swift */,
+				D99D42D021D200AD00923878 /* AnotherStoriesLayout.swift */,
+				D99D42D321D227F500923878 /* StoriesLayout.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -243,13 +246,14 @@
 			files = (
 				D99D42C021CF4F2D00923878 /* ExampleNode.swift in Sources */,
 				D99D42C621CF539800923878 /* ExampleDetailViewController.swift in Sources */,
-				D99D42D121D200AD00923878 /* StoriesLayout.swift in Sources */,
+				D99D42D121D200AD00923878 /* AnotherStoriesLayout.swift in Sources */,
 				D99D42C921D0B35900923878 /* TruncatableProfile.swift in Sources */,
 				D99D42CB21D0F2DE00923878 /* Stories.swift in Sources */,
 				D99D42BE21CF4DB600923878 /* ExampleListViewController.swift in Sources */,
 				D9F573ED21A8F4ED0065ADFB /* AppDelegate.swift in Sources */,
 				D99D42C221CF506200923878 /* ExampleListCellNode.swift in Sources */,
 				D99D42C421CF514500923878 /* Utilities.swift in Sources */,
+				D99D42D421D227F500923878 /* StoriesLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

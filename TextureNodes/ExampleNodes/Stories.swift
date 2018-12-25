@@ -10,7 +10,7 @@ final class Stories: ExampleNode, ASCollectionDelegate, ASCollectionDataSource {
   var stories: [Story] = []
   let kNumberOfStories: UInt = 12
   private let collectionNode: ASCollectionNode
-  // private let layoutInspector = StoriesLayoutInspector()
+  private let headerNode: HeaderNode
   
   override class var title: String {
     return "Stories"
@@ -26,6 +26,7 @@ final class Stories: ExampleNode, ASCollectionDelegate, ASCollectionDataSource {
   
   required init() {
     collectionNode = ASCollectionNode(collectionViewLayout: StoriesLayout())
+    headerNode = HeaderNode()
     
     super.init()
     
@@ -37,25 +38,15 @@ final class Stories: ExampleNode, ASCollectionDelegate, ASCollectionDataSource {
   }
   
   private func setupNodes() {
-    setupCollectionNode()
-  }
-  
-  private func setupCollectionNode() {
     collectionNode.delegate = self
     collectionNode.dataSource = self
     collectionNode.backgroundColor = .white
     collectionNode.style.height = ASDimensionMake(224)
-    // collectionNode.layoutInspector = layoutInspector
-    collectionNode.registerSupplementaryNode(ofKind: UICollectionView.elementKindSectionHeader)
   }
   
   func collectionNode(_ collectionNode: ASCollectionNode, nodeForItemAt indexPath: IndexPath) -> ASCellNode {
     let story = stories[indexPath.item]
     return StoryCellNode(story: story)
-  }
-  
-  func collectionNode(_ collectionNode: ASCollectionNode, nodeForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> ASCellNode {
-    return HeaderCellNode()
   }
   
   func numberOfSections(in collectionNode: ASCollectionNode) -> Int {
@@ -67,12 +58,16 @@ final class Stories: ExampleNode, ASCollectionDelegate, ASCollectionDataSource {
   }
 
   override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-    return ASWrapperLayoutSpec(layoutElement: collectionNode)
+    let stack = ASStackLayoutSpec.vertical()
+    stack.children = [headerNode, collectionNode]
+    stack.justifyContent = .start
+    
+    return ASWrapperLayoutSpec(layoutElement: stack)
   }
   
 }
 
-final class HeaderCellNode: ASCellNode {
+final class HeaderNode: ASDisplayNode {
   
   let title: ASTextNode
   let more: ASTextNode
@@ -83,7 +78,7 @@ final class HeaderCellNode: ASCellNode {
     
     super.init()
     
-    backgroundColor = .blue
+    automaticallyManagesSubnodes = true
     
     let attributes: [NSAttributedString.Key: Any] = [
       NSAttributedString.Key.foregroundColor: UIColor.gray,
@@ -107,7 +102,7 @@ final class HeaderCellNode: ASCellNode {
     )
     
     return ASInsetLayoutSpec(
-      insets: UIEdgeInsets(top: 11.0, left: 4.0, bottom: 11.0, right: 4.0),
+      insets: UIEdgeInsets(top: 12.0, left: 6.0, bottom: 0.0, right: 6.0),
       child: stackSpec
     )
   }
@@ -127,7 +122,7 @@ final class StoryCellNode: ASCellNode {
   
   override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
     return ASInsetLayoutSpec(
-      insets: UIEdgeInsets(top: 12.0, left: 12.0, bottom: 12.0, right: 12.0),
+      insets: UIEdgeInsets(top: 12.0, left: 12.0, bottom: 12.0, right: 0.0),
       child: containerNode
     )
   }
